@@ -1,6 +1,6 @@
 package temp;
 
-import tests.test01.MyGdxGame;
+import tests.test01.State;
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
@@ -13,6 +13,6 @@ public class MainActivity extends AndroidApplication {
         
         AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
         
-        initialize(new MyGdxGame(), cfg);
+        initialize(new State(), cfg);
     }
 }

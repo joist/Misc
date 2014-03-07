@@ -12,7 +12,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-public class MyGdxGame extends AppState {
+public class State extends AppState {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 	private Texture texture;
@@ -48,7 +48,7 @@ public class MyGdxGame extends AppState {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
-		batch.setProjectionMatrix(camera.combined.rotate	(0, 0, 1, 0.01f));
+		batch.setProjectionMatrix(camera.combined.rotate	(0, 0, 1, 1f));
 		batch.begin();
 		sprite.draw(batch);
 		batch.end();
