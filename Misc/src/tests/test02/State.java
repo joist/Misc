@@ -1,6 +1,6 @@
 package tests.test02;
 
-import library.renderpixmap.PixmapRenderer;
+import library.misc.PixmapRenderer;
 import library.statestuff.AppState;
 import library.statestuff.InputState;
 

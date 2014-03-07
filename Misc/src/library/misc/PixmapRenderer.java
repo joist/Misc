@@ -1,4 +1,4 @@
-package library.renderpixmap;
+package library.misc;
 
 import library.statestuff.InputState;
 
@@ -21,6 +21,7 @@ public class PixmapRenderer {
 	public void updateView(InputState inputstate)
 	{
 		if (inputstate.isKeyDown(Keys.SHIFT_LEFT)) speedmodifier = scale;
+		else if (inputstate.isKeyDown(Keys.SHIFT_LEFT)) speedmodifier = 0.25f;
 		else speedmodifier = 1;
 			
 		if (inputstate.isKeyDown(Keys.W)) y -= speedmodifier*scrollspeed/scale;
