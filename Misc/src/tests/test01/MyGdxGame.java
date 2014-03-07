@@ -1,6 +1,8 @@
-package temp;
+package tests.test01;
 
-import com.badlogic.gdx.ApplicationListener;
+import library.statestuff.AppState;
+import library.statestuff.InputState;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -10,7 +12,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-public class MyGdxGame implements ApplicationListener {
+public class MyGdxGame extends AppState {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 	private Texture texture;
@@ -42,11 +44,11 @@ public class MyGdxGame implements ApplicationListener {
 	}
 
 	@Override
-	public void render() {		
+	public void render(InputState inputstate) {		
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
-		batch.setProjectionMatrix(camera.combined);
+		batch.setProjectionMatrix(camera.combined.rotate	(0, 0, 1, 0.01f));
 		batch.begin();
 		sprite.draw(batch);
 		batch.end();
