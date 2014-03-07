@@ -13,6 +13,6 @@ public class Main {
 		cfg.height = 360;
 		
 		//new LwjglApplication(new MyGdxGame(), cfg);
-		new LwjglApplication(new StateHolder(new tests.test02.State()), cfg);
+		new LwjglApplication(new StateHolder(new tests.test03.State()), cfg);
 	}
 }
