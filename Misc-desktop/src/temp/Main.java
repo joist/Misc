@@ -11,7 +11,8 @@ public class Main {
 		cfg.title = "Misc";
 		cfg.width = 640;
 		cfg.height = 360;
+		cfg.foregroundFPS = 30;
 		
-		new LwjglApplication(new StateHolder(new tests.test03.State()), cfg);
+		new LwjglApplication(new StateHolder(new tests.test04.State()), cfg);
 	}
 }
