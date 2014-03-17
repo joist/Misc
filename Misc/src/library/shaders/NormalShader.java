@@ -67,6 +67,7 @@ public class NormalShader implements Shader {
 		context.setDepthTest(GL20.GL_LEQUAL);
 		Gdx.gl20.glEnable(GL20.GL_CULL_FACE);
 		context.setCullFace(GL20.GL_BACK);
+		//Gdx.gl20.glDisable(GL20.GL_CULL_FACE);
 	}
 
 	@Override

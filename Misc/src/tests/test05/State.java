@@ -1,5 +1,6 @@
-package tests.test04;
+package tests.test05;
 
+import library.misc.CameraMover;
 import library.misc.ScreenshotTaker;
 import library.shaders.NormalShader;
 import library.statestuff.AppState;
@@ -22,6 +23,7 @@ public class State extends AppState {
 	public Model model;
 	public ModelInstance modelinstance;
 	public Shader shader;
+	public CameraMover cameramover;
 	
 	@Override
 	public void create() {		
@@ -44,6 +46,8 @@ public class State extends AppState {
 		
 		shader = (Shader)(new NormalShader());
 		shader.init();
+		
+		cameramover = new CameraMover();
 	}
 
 	@Override
@@ -54,7 +58,12 @@ public class State extends AppState {
 	}
 
 	@Override
-	public void render(InputState inputstate) {		
+	public void render(InputState inputstate) {	
+		if (inputstate.mouseleftdown) Gdx.input.setCursorCatched(true);
+		
+		cameramover.move(inputstate);
+		cameramover.setCam(camera);
+		
 		Gdx.gl.glClearColor(0.5f, 0.5f, 0.5f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 
